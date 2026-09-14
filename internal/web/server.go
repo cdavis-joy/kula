@@ -805,9 +805,10 @@ func (s *Server) handleConfig(w http.ResponseWriter, r *http.Request) {
 			var mList []map[string]interface{}
 			for _, m := range metrics {
 				mList = append(mList, map[string]interface{}{
-					"name": m.Name,
-					"unit": m.Unit,
-					"max":  m.Max,
+					"name":  m.Name,
+					"unit":  m.Unit,
+					"max":   m.Max,
+					"scale": m.Scale,
 				})
 			}
 			cm[group] = mList

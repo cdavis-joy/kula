@@ -931,6 +931,8 @@ export function addSampleToCharts(item, ts) {
                 const ctx = canvas?.getContext('2d');
                 if (ctx) {
                     const yConfig = { beginAtZero: true };
+                    const scale = cfgList.length > 0 ? cfgList[0].scale : '';
+                    if (scale === 'log') { yConfig.type = 'logarithmic'; yConfig.beginAtZero = false; }
                     if (maxVal) yConfig.max = maxVal;
                     if (unit) yConfig.title = { display: true, text: unit };
 
