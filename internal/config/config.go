@@ -286,9 +286,10 @@ type ApplicationsConfig struct {
 // CustomMetricConfig defines a single metric line within a custom chart group.
 // Multiple metrics with different names form separate lines in the same chart.
 type CustomMetricConfig struct {
-	Name string  `yaml:"name"`
-	Unit string  `yaml:"unit"`
-	Max  float64 `yaml:"max"`
+	Name  string  `yaml:"name"`
+	Unit  string  `yaml:"unit"`
+	Max   float64 `yaml:"max"`
+	Scale string  `yaml:"scale"` // "" | "log"
 }
 
 // NginxConfig controls monitoring via the nginx stub_status module.
